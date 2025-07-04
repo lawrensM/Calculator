@@ -1,0 +1,64 @@
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="inputBox" value="0" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="digitButton" onclick="digitBtnPressed('7')">7</td>
+                <td class="digitButton" onclick="digitBtnPressed('8')">8</td>
+                <td class="digitButton" onclick="digitBtnPressed('9')">9</td>
+                <td class="digitButton" onclick="digitBtnPressed('*')">*</td>
+            </tr>
+            <tr>
+                <td class="digitButton" onclick="digitBtnPressed('4')">4</td>
+                <td class="digitButton" onclick="digitBtnPressed('5')">5</td>
+                <td class="digitButton" onclick="digitBtnPressed('6')">6</td>
+                <td class="digitButton" onclick="digitBtnPressed('-')">-</td>
+            </tr>
+            <tr>
+                <td class="digitButton" onclick="digitBtnPressed('1')">1</td>
+                <td class="digitButton" onclick="digitBtnPressed('2')">2</td>
+                <td class="digitButton" onclick="digitBtnPressed('3')">3</td>
+                <td class="digitButton" onclick="digitBtnPressed('+')">+</td>
+            </tr>
+            <tr>
+                <td class="digitButton" colspan="2" onclick="digitBtnPressed('0')">0</td>
+                <td class="clearInput" onclick="clearInput()">AC</td>
+                <td class="digitButton" onclick="digitBtnPressed('/')">/</td>
+            </tr>
+            <tr>
+                <td class="calculateResult" colspan="4" onclick="calculateResult()">=</td>
+            </tr>
+        </table>
+
+        <script>
+           function digitBtnPressed(button){
+                let input = document.getElementById("inputBox");
+                if (input.value === "0") {
+                    input.value = button;
+                } else {
+                    input.value += button;
+                }
+           }
+
+           function clearInput() {
+                document.getElementById("inputBox").value = "0";
+           }
+
+           function calculateResult() {
+                let input = document.getElementById("inputBox");
+                try {
+                    input.value = eval(input.value);
+                } catch {
+                    input.value = "Error";
+                }
+           }
+        </script>
+    </body>
+</html>

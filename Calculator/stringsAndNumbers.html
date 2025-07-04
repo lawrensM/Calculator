@@ -1,0 +1,28 @@
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <p id="outputText"></p>
+
+        <script>
+            let text1 = "ten";
+            let text2 = "2";
+
+            let num1 = parseInt(text1);
+            let num2 = parseInt(text2);
+
+            if(isNaN(num1) || isNaN(num2)){
+                document.getElementById("outputText").innerHTML = "You have not entered a valid number";
+            } else {document.getElementById("outputText").innerHTML = num1 -  num2;
+                
+            }
+
+             function stringToNumebr(text){
+                return parseInt(text);
+            }
+           
+            
+        </script>
+    </body>
+</html>
